@@ -1,0 +1,10 @@
+main()  
+{
+printf("Linguagem C");
+system("pause");
+}
+
+/* 
+falta importar a biblioteca stdio.h para que o printf funcione
+e falta o "return 0;" no final do código
+*/

@@ -1,0 +1,9 @@
+#include <stdio.h>
+#include <stdlib.h>; // o ; não é necessario aqui
+int Main{} // a configuração de uma função main deve ser int main (){}
+(
+printf( Existem %d semanas no ano.,52); // falta as aspas duplas dentro do parentese antes da vigulas 
+cout << endl; // cout é de c++ e precisa que a biblioteca seja chamada
+system("PAUSE");    
+return 0;
+)
