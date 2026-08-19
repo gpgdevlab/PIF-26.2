@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <Windows.h>
 
-int main()
-{
+int main() {
+    
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
 
     printf("%-10s %5s\n", "ALUNO(A)", "NOTA");
     printf("%-10s %5s\n", "=========", "=====");

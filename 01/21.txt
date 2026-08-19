@@ -1,7 +1,11 @@
 01
 #include <stdio.h>
-
+#include <Windows.h>
 int main() {
+    
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+
     printf("Treinamento em programação.\n");
     printf("Linguagem C.\n");
     return 0;
@@ -9,8 +13,12 @@ int main() {
 
 02
 #include <stdio.h>
-
+#include <Windows.h>
 int main() {
+    
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+
     printf("Treinamento em programação.\n");
     printf("Linguagem C.\n");
     return 0;
@@ -19,12 +27,15 @@ int main() {
 03
 #include <stdio.h>
 #include <stdlib.h>
+#include <Windows.h>
 
-int main()
-{
- 
+int main() {
+    
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+
     printf("\xC9\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xBB\n");
-    printf("\xBA Treinamento em programacao. \xBA\n");
+    printf("\xBA Treinamento em programação. \xBA\n");
     printf("\xBA Linguagem C.                \xBA\n");
     printf("\xC8\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xBC\n");
 

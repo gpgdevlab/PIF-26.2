@@ -5,6 +5,7 @@ system("pause");
 }
 
 /* 
-falta importar a biblioteca stdio.h para que o printf funcione
-e falta o "return 0;" no final do código
+falta importar a biblioteca stdio.h para que o printf() funcione,
+também a biblioteca stdlib.h para usar o system()
+e falta o "return 0;" no final do código para mostrar que o programa encerrou
 */

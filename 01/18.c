@@ -1,7 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <Windows.h>
 
 int main() {
+    
+    // configurar a linguagem de texto para o padrão português
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+
     //variáveis de ponto flutuante
     float preco_lapis = 4.88f;
     float preco_borrachas = 234.54f;
