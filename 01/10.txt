@@ -1,0 +1,4 @@
+b: Verdadeiro (a linguagem C diferencia rigorosamente letras maiúsculas de minúsculas).
+
+Case sensitive é quando a linguagem interpreta de forma diferente uma letra maiuscula de uma minúscula
+por exemplo peso, Peso e PESO não representam a mesma variável na memória

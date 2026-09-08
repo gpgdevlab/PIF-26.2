@@ -1,0 +1,12 @@
+main()
+{
+int a=1; b=2; c=3:
+printf("0s números são: %d%d%d\n, a, b, c, d);
+system("pause");
+}
+
+/*
+falta importar a biblioteca stdio.h para que o printf funcione
+na linha 4 após o \n deveria ter " fechando as aspas
+e falta o "return 0;" no final do código
+*/

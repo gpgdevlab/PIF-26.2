@@ -1,0 +1,18 @@
+#include <stdio.h>  // biblioteca das funcoes de entrada e saida 
+#include <stdlib.h> // biblioteca da funcao system
+
+int main()
+{
+    printf("\n\t\"Primeiro programa\""); // imprime o texto formatado 
+    system("PAUSE");                   // executa o comando do sistema operacional
+    return 0;                           // mostra que o programa terminou 
+}
+
+\n : Insere uma quebra de linha (pula para a linha de baixo).
+\t : Insere uma tabulacao horizontal (espacamento/recuo).
+\" : Imprime o caractere de aspas duplas (") literalmente.
+PAUSE : Comando do Windows que paralisa a execucao e exibe o texto:
+             "Pressione qualquer tecla para continuar. . ."
+
+saida:
+        "Primeiro programa"Pressione qualquer tecla para continuar. . .

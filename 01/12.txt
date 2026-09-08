@@ -1,0 +1,10 @@
+ Instrucao          | Status C/I | Justificativa Teorica                                                              
+--------------------------------------------------------------------------------------------------------------------------
+ a: int a;          | Correto      | Declaracao valida de variavel inteira.                                             
+ b: float b;        | Correto      | Declaracao valida de variavel de ponto flutuante.                                  
+ c: double float c; | Incorreto    | Combinacao invalida. Nao se pode combinar 'double' e 'float' na mesma declaracao.  
+ d: unsigned char d;| Correto      | Uso valido do modificador 'unsigned' com 'char' caractere sem sinal, 0 a 255:.    
+ e: unsigned e;     | Correto      | Valido. Ao omitir o tipo base com 'unsigned', o C assume 'unsigned int'.           
+ f: long float f;   | Incorreto    | O modificador 'long' nao se aplica a 'float' em C padrao usa-se 'double':.        
+ g: long g;         | Correto      | Valido. Ao omitir o tipo base com 'long', o C assume 'long int'.                   
+ h: long double h;  | Correto      | Valido. 'long double' e um tipo nativo para ponto flutuante de precisao estendida. 
