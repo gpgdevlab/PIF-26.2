@@ -1,0 +1,6 @@
+a) 2
+
+b) Conversão implícita (coerção) e truncamento. Ao atribuir um valor com casa decimal a um int, 
+a linguagem C descarta a parte fracionária sem realizar arredondamento.
+
+c) Declarar a variável como float/double, usar conversão explícita (int) ou aplicar round() da biblioteca <math.h>.

@@ -1,0 +1,9 @@
+a) A <conio.h> é proprietária e legada do DOS/Windows; 
+não pertence ao padrão ANSI/ISO C e quebra a portabilidade em sistemas Linux e macOS.
+
+b) getchar(), fgetc() e scanf().
+
+c)
+
+char c;
+scanf(" %c", &c); // O espaço antes de %c ignora o '\n' residual do buffer
