@@ -1,0 +1,63 @@
+LISTA DE EXERCÍCIOS – CAPÍTULO 3 – PIF
+Respostas das questões teóricas – 01 a 06
+
+Questão 01
+a) while testa a condição antes da primeira execução, portanto pode executar zero vezes. do-while executa o bloco primeiro e testa depois, portanto executa pelo menos uma vez.
+b) for é adequado quando a repetição tem uma contagem ou controle bem definido; while quando a repetição depende de uma condição e pode ter quantidade indeterminada; do-while quando o bloco precisa executar pelo menos uma vez, como em menus e validações.
+c) while (condicao); é sintaticamente válido, mas normalmente representa erro de lógica. O ponto e vírgula cria um corpo vazio. Se a condição permanecer verdadeira, o programa fica preso no laço vazio.
+
+Questão 02
+a) A variável soma foi declarada dentro do bloco do for e só existe nesse escopo. Portanto, o printf depois do bloco não consegue acessar soma.
+b) A declaração int soma = 0 ocorre novamente em cada iteração, reiniciando o acumulador para zero. Assim, ele não mantém a soma anterior.
+c) Declare soma antes do for e inicialize-a uma única vez:
+    int i;
+    int soma = 0;
+    for (i = 1; i < 10; i++) {
+        soma += i * i;
+    }
+    printf("Soma final = %d\n", soma);
+A variável declarada dentro de um bloco possui escopo de bloco e seu tempo de vida termina ao sair desse bloco. A variável declarada antes do laço permanece disponível no escopo em que foi declarada.
+
+Questão 03
+a) Trecho A: 36, 18, 9, 4, 2, 1.
+b) Trecho B lê caracteres até que o usuário digite 'X'. A expressão ch + 1 produz o próximo código de caractere. Os parênteses garantem que a atribuição aconteça antes da comparação: (ch = getch()) != 'X'.
+c) O laço infinito pode ser interrompido programaticamente usando break quando uma condição de saída for satisfeita.
+
+Questão 04
+a) break encerra imediatamente o laço em que está contido e a execução continua depois dele.
+b) continue interrompe a iteração atual. Em um for, depois do continue é executada a expressão de incremento/atualização e então a condição é testada novamente.
+c) Em laços aninhados, break encerra somente o laço mais interno.
+
+Questão 05
+a) São 6 iterações.
+b) Saída:
+i = 0, j = 10 | soma = 10
+i = 1, j = 9 | soma = 10
+i = 2, j = 8 | soma = 10
+i = 3, j = 7 | soma = 10
+i = 4, j = 6 | soma = 10
+i = 5, j = 5 | soma = 10
+c) Versão com while:
+    int i = 0, j = 10;
+    while (i < j) {
+        printf("i = %d, j = %d | soma = %d\n", i, j, i + j);
+        i++;
+        j--;
+    }
+
+Questão 06
+a) O valor final impresso é 6.
+b) x começa em 0. Em x++ < 5, o valor antigo é comparado e depois x é incrementado:
+0 < 5 → x = 1
+1 < 5 → x = 2
+2 < 5 → x = 3
+3 < 5 → x = 4
+4 < 5 → x = 5
+5 < 5 → falso → x = 6
+c) Uma forma explícita equivalente é:
+    int x = 0;
+    while (x < 5) {
+        x++;
+    }
+    x++;
+    printf("Valor final de x = %d\n", x);

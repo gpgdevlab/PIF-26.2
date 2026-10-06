@@ -1,0 +1,105 @@
+SIMULADO - PROGRAMACAO IMPERATIVA E FUNCIONAL (PIF)
+CAPITULOS 1, 2 E 3
+CESAR SCHOOL - 2026.2
+
+QUESTAO 01 - Sensibilidade a Caixa e Identificadores em C
+Resposta: alternativa C.
+Em C, letras maiusculas e minusculas sao diferentes. Portanto, valor, VALOR,
+peso, Peso, taxa e TAXA representam identificadores diferentes para o compilador.
+
+QUESTAO 02 - Especificadores de Formato, Sequencias de Escape e Erros
+Os tres erros sao:
+1. Ha um ponto e virgula indevido em #include <stdlib.h>;.
+   O correto e #include <stdlib.h>
+2. A funcao principal foi escrita como int Main(). C diferencia maiusculas e
+   minusculas. O correto e int main().
+3. O printf foi escrito sem aspas na mensagem. O correto e colocar a mensagem
+   entre aspas, por exemplo: printf("A idade do aluno eh: %d anos..", idade);
+Observacao: cout << endl; tambem nao pertence a C e deveria ser substituido
+por printf("\n");.
+
+QUESTAO 03 - Atribuicao Composta
+Codigo inicial:
+int a = 2, b = 4, c = 5, d = 10;
+
+1. a += b + c;
+   a = 2 + 4 + 5 = 11
+
+2. b *= c = d - 2;
+   c = 10 - 2 = 8
+   b = 4 * 8 = 32
+
+3. d %= a + 3;
+   d = 10 % (11 + 3)
+   d = 10
+
+4. a += b += c += 5;
+   c = 8 + 5 = 13
+   b = 32 + 13 = 45
+   a = 11 + 45 = 56
+
+Resposta final:
+a = 56
+b = 45
+c = 13
+d = 10
+
+QUESTAO 04 - Expressoes Logicas e Relacionais
+a) i < j + 2
+   2 < 3 + 2 -> 2 < 5 -> 1 (Verdadeiro)
+
+b) 2 * i - 5 <= j - 4
+   4 - 5 <= 3 - 4
+   -1 <= -1 -> 1 (Verdadeiro)
+
+c) !k && (x + y >= 7.5)
+   !0 && (2.5 + 5.0 >= 7.5)
+   1 && 1 -> 1 (Verdadeiro)
+
+d) !(i == j) || (y / x == 2.0)
+   !(2 == 3) || (5.0 / 2.5 == 2.0)
+   1 || 1 -> 1 (Verdadeiro)
+
+e) i == 2 && j == 4 || k == 0
+   1 && 0 || 1
+   0 || 1 -> 1 (Verdadeiro)
+
+QUESTAO 05 - Estruturas de Repeticao
+a) while testa a condicao antes de executar o bloco. Por isso, pode executar
+   zero vezes. O do-while executa o bloco primeiro e testa a condicao depois,
+   portanto executa pelo menos uma vez.
+
+b) O for e mais elegante quando sabemos a inicializacao, a condicao de parada
+   e o incremento, principalmente em contagens. Essas tres partes ficam
+   organizadas no cabecalho do laco.
+
+c) while (condicao); nao e necessariamente erro de compilacao. O ponto e
+   virgula representa o corpo vazio do while. Se a condicao for verdadeira e
+   nunca mudar, o programa pode ficar preso em um laco infinito. Isso e um
+   erro de logica quando o ponto e virgula foi colocado por engano.
+
+QUESTAO 06 - Escopo, continue e break
+a) O compilador gera erro porque a variavel soma foi declarada dentro do bloco
+   do for e, portanto, seu escopo termina no fechamento desse bloco. O printf
+   esta fora desse escopo e nao consegue acessar soma.
+
+b) As iteracoes com i = 1, 2, 3 e 4 executam normalmente.
+   Quando i = 5, continue pula o restante da iteracao.
+   i = 6 e i = 7 executam normalmente.
+   Quando i = 8, break encerra o laco.
+   Portanto, i = 9 e i = 10 nao sao executados.
+
+c) Para corrigir, soma deve ser declarada antes do for:
+   int soma = 0;
+
+   O resultado sera:
+   1^2 + 2^2 + 3^2 + 4^2 + 6^2 + 7^2
+   = 1 + 4 + 9 + 16 + 36 + 49
+   = 115
+
+OBSERVACAO SOBRE A QUESTAO 07
+A lista fornecida passa da Questao 06 para a Questao 08. Nao ha enunciado
+da Questao 07 no arquivo recebido, portanto ela nao foi inventada ou incluida
+no pacote.
+
+
