@@ -1,0 +1,66 @@
+LISTA DE EXERCÍCIOS – CAPÍTULO 4 – PIF
+Respostas das questões teóricas – 01 a 06
+
+Questão 01
+a) if (x = 0) é uma ATRIBUIÇÃO, não uma comparação. O valor 0 é copiado para x (x passa a valer 0, perdendo o valor anterior) e o valor da expressão de atribuição é 0, que é interpretado como falso. Portanto, o bloco do if NUNCA será executado; se existir else, ele sempre será executado. Já if (x == 0) apenas compara e não altera x.
+b) Em C não existe tipo lógico nos comandos de decisão (ANSI C): qualquer valor numérico, inteiro ou real, pode ser usado como condição. Valor igual a zero (0, 0.0, '\0') é FALSO; qualquer valor diferente de zero (positivo ou negativo, inclusive 0.5 ou -3) é VERDADEIRO.
+c) A instrução if (x = -5) atribui -5 a x, e o valor da expressão é -5, que é diferente de zero, portanto verdadeiro. O bloco será EXECUTADO. Pelo padrão ANSI C, o primeiro subcomando do if é executado se a expressão de controle for diferente de zero ("compares unequal to 0"); o sinal do número não importa.
+
+Questão 02
+a) Será impressa a mensagem "Opção B". Apesar da indentação sugerir que o else pertence ao primeiro if, o compilador ignora a indentação: o else se associa ao if mais próximo (if (y > 10)). Como x > 10 é verdadeiro, o if interno é avaliado; y > 10 é falso (5 > 10), logo o else do if interno é executado e imprime "Opção B". A "Opção A" não é impressa.
+b) Regra oficial: em código sem chaves, o else sempre é associado ao if MAIS PRÓXIMO que ainda não possui else (problema do "else pendente"). Para mudar essa associação é preciso usar chaves { }.
+c) Versão com chaves, em que a Opção B só aparece quando x <= 10:
+    int x = 15, y = 5;
+    if (x > 10) {
+        if (y > 10) {
+            printf("Opção A\n");
+        }
+    } else {
+        printf("Opção B\n");
+    }
+
+Questão 03
+a) Segunda linha: o operador ternário avalia a condição (media >= 7.0). Se for verdadeira, o resultado da expressão é o valor após o '?' ('A'); se for falsa, é o valor após o ':' ('R'). Esse resultado é atribuído a situacao. Com media = 6.8, a condição 6.8 >= 7.0 é falsa, portanto situacao recebe 'R' (Reprovado).
+b) Versão com if-else:
+    media = (nota1 + nota2) / 2.0;
+    if (media >= 7.0) {
+        situacao = 'A';
+    } else {
+        situacao = 'R';
+    }
+c) Não. O ternário é uma EXPRESSÃO que produz um valor e cada ramo deve ser uma única expressão (com tipos compatíveis). Ele não comporta blocos com vários comandos, declarações de variáveis, laços ou ramos que apenas executam ações sem produzir valor; o if-else comporta. Além disso, ternários aninhados ou muito longos prejudicam a legibilidade, então ele é indicado apenas para escolhas simples de valor.
+
+Questão 04
+a) Saída exata:
+Prata
+Ouro
+Como codigo = 2, a execução entra em case 2 e imprime "Prata". Não há break nesse case, então a execução "cai" para o case 3, imprime "Ouro" e só então encontra o break, que encerra o switch. O case 1 e o default não são executados.
+b) O break encerra imediatamente o switch, impedindo que os comandos dos cases seguintes sejam executados. Quando ele é omitido ocorre o efeito fall-through (queda em cascata): a execução continua nos cases seguintes até encontrar um break ou o fim do switch.
+c) A expressão do switch deve ser de tipo inteiro (int, char, short, long, long long e seus unsigned, além de enum, pois char e enum são tratados como inteiros). Não é permitido float nem double: o padrão exige expressão de tipo integral, e os rótulos case precisam ser constantes inteiras. Valores de ponto flutuante têm representação aproximada, o que tornaria a comparação de igualdade exata pouco confiável.
+
+Questão 05
+a) Saída: a = 0, b = 5, c = 8
+Como a != 0 é falso, o operador && já sabe que o resultado é falso e NÃO avalia ++b > 5; logo ++b foi ignorado e b continua 5. A condição é falsa, o else é executado e c = 10 - 2 = 8.
+b) Avaliação de curto-circuito: o operando da direita só é avaliado se for necessário para determinar o resultado.
+- Em E (&&): se o primeiro operando for falso, o resultado é falso e o segundo NÃO é avaliado.
+- Em OU (||): se o primeiro operando for verdadeiro, o resultado é verdadeiro e o segundo NÃO é avaliado.
+c) Com if (a == 0 || ++b > 5): a == 0 é verdadeiro, então o || não avalia ++b. A condição é verdadeira, c += 10. Valores finais: b = 5 e c = 20.
+
+Questão 06
+a) Para idade = 65 serão impressos:
+Idoso
+Adulto
+Jovem
+Isso ocorre porque os três primeiros if são independentes: cada um é testado separadamente e 65 satisfaz idade >= 60, idade >= 18 e idade >= 12. O else pertence apenas ao último if.
+b) Em uma sequência de ifs independentes, TODAS as condições são testadas e vários blocos podem ser executados. Em uma cadeia else-if, as condições são testadas em ordem e, assim que uma for verdadeira, seu bloco é executado e todas as demais são ignoradas: no máximo um bloco é executado.
+c) Versão correta:
+    int idade = 25;
+    if (idade >= 60) {
+        printf("Idoso\n");
+    } else if (idade >= 18) {
+        printf("Adulto\n");
+    } else if (idade >= 12) {
+        printf("Jovem\n");
+    } else {
+        printf("Criança\n");
+    }
